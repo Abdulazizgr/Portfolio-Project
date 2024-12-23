@@ -112,13 +112,19 @@ export default function Footer() {
               discussions!
             </p>
             <Button
+              variant="outline"
+              className="rounded-full border-2  px-8 text-[#1E1915]  bg-[F4F1EA] border-[#2f4858]  hover:bg-[#363634] hover:text-white transition-colors"
+            >
+              Join our Discord
+            </Button>
+            {/* <Button
               className="w-full rounded-full bg-[#5865F2] hover:bg-[#4752C4] text-white"
             //   onClick={() =>
             //     window.open("https://discord.gg/your-invite-link", "_blank")
             //   }
             >
-              Join our Discord
-            </Button>
+             
+            </Button> */}
           </div>
         </div>
 

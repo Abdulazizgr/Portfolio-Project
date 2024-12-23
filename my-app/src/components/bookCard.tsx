@@ -62,7 +62,7 @@ export default function BookCard() {
       <div className="container mx-auto px-4">
         <div className="text-center mb-2">
           <span className="text-sm text-gray-600 uppercase tracking-wider">
-            SOME QUALITY ITEMS
+            Featured Book Reviews
           </span>
         </div>
         <h2 className="text-3xl font-bold text-center text-[#4527A0] mb-8">
@@ -73,14 +73,13 @@ export default function BookCard() {
           {books.map((book) => (
             <div key={book.id} className="group  p-4">
               <div className="relative aspect-[3/4] mb-4 shadow-2xl rounded-xl">
-              <Link href="/products">
-                <Image
-                  src={book.image}
-                  alt={book.title}
-                  fill
-                  className="object-cover p-4 rounded-lg"
-                 
-                />
+                <Link href="/products">
+                  <Image
+                    src={book.image}
+                    alt={book.title}
+                    fill
+                    className="object-cover p-4 rounded-lg"
+                  />
                 </Link>
               </div>
               <h3 className="font-semibold text-lg mb-1 text-center">
@@ -104,11 +103,13 @@ export default function BookCard() {
             <button className="w-2 h-2 rounded-full bg-gray-200" />
             <button className="w-2 h-2 rounded-full bg-gray-200" />
           </div> */}
-          <Link
-            href="/products"
-            className="text-[#E64A19] hover:text-[#BF360C] transition-colors flex items-center gap-2"
-          >
-            View All Books →
+          <Link href="/">
+            <Button
+              variant="outline"
+              className="rounded-full border-2 py-5 px-10  text-[#1E1915]  bg-[F4F1EA] border-[#2f4858]  hover:bg-[#363634] hover:text-white transition-colors"
+            >
+              View All Books →
+            </Button>
           </Link>
         </div>
       </div>

@@ -2,26 +2,29 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Star } from "lucide-react";
 import Link from "next/link";
+import "./3dBook.css";
 
 export default function FeaturedBook() {
   return (
-    <div className=" to-white ">
+    <div className=" bg-[#] ">
       <div className="container mx-auto px-4 py-16">
-        <div className="grid md:grid-cols-2 gap-12 items-center max-w-5xl mx-auto">
+        <div className="grid sm:grid-cols-2 gap-12 items-center  max-w-5xl mx-auto">
           {/* Book Cover */}
-          <div className="relative aspect-[3/4] max-w-md  mx-auto md:mx-0">
+          <div className="relative  max-w-md  mx-auto md:mx-0">
             <Image
               src="/k.jpg?height=600&width=450"
               alt="Birds Gonna Be Happy by Timbur Hood"
               width={350}
               height={500}
-              className="rounded-lg shadow-lg p-5  "
+              className="rounded-2xl shadow-2xl p-5 max-w-[250px] max-h-[400px] lg:max-w-[350px] lg:max-h-[500px] "
             />
           </div>
 
           {/* Book Details */}
-          <div className="space-y-6">
-            <h2 className="text-3xl font-bold text-[#4527A0]">Featured Book</h2>
+          <div className="space-y-6  ">
+            <h2 className="text-lg font-bold text-[#1E1915]">
+              Featured Book of the week
+            </h2>
 
             <div className="space-y-2">
               <p className="text-sm text-gray-500 uppercase tracking-wider">
@@ -61,11 +64,11 @@ export default function FeaturedBook() {
             <Link href="/books/birds-gonna-be-happy">
               <Button
                 variant="outline"
-                className="rounded-full  border-2 border-[#4527A0] text-[#4527A0] hover:bg-[#4527A0] hover:text-white transition-colors"
+                className="rounded-full  border-2 border-[#363634] text-[#363634] hover:bg-[#363634] hover:text-white transition-colors"
               >
                 VIEW MORE →
               </Button>
-            </Link>
+            </Link> 
           </div>
         </div>
       </div>
