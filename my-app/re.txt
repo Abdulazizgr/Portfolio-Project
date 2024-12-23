@@ -1,0 +1,3 @@
+nav = F4F1EA
+text = 1E1915
+hero = F9F8F4
