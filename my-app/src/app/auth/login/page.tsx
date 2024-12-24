@@ -13,11 +13,14 @@ export default function LoginForm() {
 
   return (
     <>
-      <div className="min-h-screen bg-[#FFFFFF] p-4 md:p-6 lg:p-8">
+      <div className="min-h-screen  p-4 md:p-6 lg:p-8">
         {/* Logo */}
         <div className="flex items-center gap-2 mb-20 md:mb-20">
-          <div className="w-12 h-12 rounded-xl bg-gray-700" />
-          <span className="text-xl font-semibold">LOGO NAME</span>
+          {/* Logo and Brand */}
+          <Image src="/logo3.png" width={40} height={40} alt="Logo" />
+          <span className="text-xl font-bold pt-2 text-[#1E1915]">
+            Logo Name
+          </span>
         </div>
 
         {/* Main Content */}
@@ -44,7 +47,7 @@ export default function LoginForm() {
 
           {/* Login Form */}
           <div className="max-w-md mx-auto">
-            <div className="bg-[#A4C0ED] rounded-3xl p-8 relative overflow-hidden">
+            <div className="bg-[#F4F1EA] rounded-3xl p-8 relative overflow-hidden">
               {/* Form Illustration */}
               <div className="absolute top-1/2 right-0 w-32">
                 {/* <Image
@@ -90,7 +93,7 @@ export default function LoginForm() {
                   </button>
                 </div>
 
-                <Button className="w-full rounded-full bg-[#3f72af] text-white h-12 hover:bg-[#355a8e] transition-all">
+                <Button className="w-full rounded-full  bg-[#4b4b48] hover:text-white h-12 hover:bg-[#363634] transition-all">
                   Log In
                 </Button>
               </form>
@@ -98,7 +101,7 @@ export default function LoginForm() {
               <div className="mt-6 text-center">
                 <p className="text-md mb-4">OR</p>
                 <div className="flex justify-center gap-4">
-                  <button className="flex items-center justify-center w-full p-3 bg-[#db4437] text-white rounded-full hover:bg-[#c1351d] transition-all">
+                  <button className="flex items-center justify-center w-full p-3 bg-[#3f72af] text-white rounded-full hover:bg-[#355a8e] transition-all">
                     <FaGoogle className="w-5 h-5 mr-2" />
                     <span className="text-sm font-medium">
                       Log in with Google

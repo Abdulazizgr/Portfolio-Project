@@ -5,6 +5,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 import { Button } from "@/components/ui/button";
+import Image from "next/image";
 import {
   Form,
   FormControl,
@@ -139,7 +140,11 @@ export default function ContactUs() {
                   </FormItem>
                 )}
               />
-              <Button type="submit" className="w-full" disabled={isSubmitting}>
+              <Button
+                type="submit"
+                className="rounded-full w-full text-white border-2 border-[#363634] hover:bg-[#363634] hover:text-white transition-colors"
+                disabled={isSubmitting}
+              >
                 {isSubmitting ? "Sending..." : "Send Message"}
               </Button>
             </form>
@@ -166,7 +171,13 @@ export default function ContactUs() {
           <div className="bg-gray-200 h-80 rounded-lg overflow-hidden">
             {/* Placeholder for map */}
             <div className="w-full h-full flex items-center justify-center text-gray-500">
-              Map Placeholder
+              <Image
+                src="/Placeholder-Map-Image.png"
+                width={750}
+                height={300}
+                alt="Placeholder Map Image"
+                className="rounded-lg  object-cover"
+              />
             </div>
           </div>
         </div>

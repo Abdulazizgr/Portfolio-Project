@@ -38,12 +38,14 @@ export default function Navbar() {
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo and Brand */}
-          <div className="flex items-center justify-center gap-2">
-            <Image src="/logo3.png" width={40} height={40} alt="Logo" />
-            <span className="text-xl font-bold pt-2 text-[#1E1915]">
-              Logo Name
-            </span>
-          </div>
+          <Link href="/">
+            <div className="flex items-center justify-center gap-2">
+              <Image src="/logo3.png" width={40} height={40} alt="Logo" />
+              <span className="text-xl font-bold pt-2 text-[#1E1915]">
+                Logo Name
+              </span>
+            </div>
+          </Link>
 
           {/* Desktop Navigation Links */}
           <div className="hidden md:flex items-center gap-8">
@@ -59,7 +61,20 @@ export default function Navbar() {
             >
               My Books
             </Link>
+            <Link
+              href="/contact"
+              className="text-sm text-[#1E1915] font-medium relative after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-0.5 after:bg-black after:transition-all after:duration-300 hover:after:w-full hover:text-gray-600 active:text-gray-800"
+            >
+              Contact Us
+            </Link>
 
+            <Link
+              href="community"
+              className="text-sm text-[#1E1915] font-medium relative after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-0.5 after:bg-black after:transition-all after:duration-300 hover:after:w-full hover:text-gray-600 active:text-gray-800"
+            >
+              Community
+            </Link>
+            {/* 
             <DropdownMenu>
               <DropdownMenuTrigger
                 className="flex items-center gap-1 
@@ -83,6 +98,7 @@ export default function Navbar() {
                 <DropdownMenuItem>Test</DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
+         */}
           </div>
 
           {/* Login Button or Profile and Mobile Menu */}
@@ -99,9 +115,7 @@ export default function Navbar() {
                   <DropdownMenuItem>
                     <Link href="/profile">My Profile</Link>
                   </DropdownMenuItem>
-                  <DropdownMenuItem>
-                    <Link href="/settings">Settings</Link>
-                  </DropdownMenuItem>
+
                   <DropdownMenuItem onClick={handleLogout}>
                     <LogOut className="h-4 w-4 mr-2" />
                     Logout
@@ -145,7 +159,19 @@ export default function Navbar() {
                     >
                       My Books
                     </Link>
-                    <Accordion type="single" collapsible>
+                    <Link
+                      href="/contact"
+                      className="block py-2 text-sm font-medium"
+                    >
+                      Contact Us
+                    </Link>
+                    <Link
+                      href="/community"
+                      className="block py-2 text-sm font-medium"
+                    >
+                      Community
+                    </Link>
+                    {/* <Accordion type="single" collapsible>
                       <AccordionItem value="reviews">
                         <AccordionTrigger className="text-sm font-medium">
                           Reviews
@@ -200,7 +226,7 @@ export default function Navbar() {
                           </div>
                         </AccordionContent>
                       </AccordionItem>
-                    </Accordion>
+                    </Accordion> */}
                     {isLoggedIn ? (
                       <>
                         <Link

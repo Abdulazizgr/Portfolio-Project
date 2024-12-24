@@ -1,51 +1,54 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import Image from "next/image"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
-import { Edit2, Save, X } from 'lucide-react'
+import { useState } from "react";
+import Image from "next/image";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Edit2, Save, X } from "lucide-react";
 
 interface ProfileDetails {
-  name: string
-  username: string
-  email: string
-  bio: string
-  location: string
-  website: string
-  avatar: string
-  joinDate: string
+  name: string;
+  username: string;
+  email: string;
+  bio: string;
+  location: string;
+  website: string;
+  avatar: string;
+  joinDate: string;
   stats: {
-    reviews: number
-    followers: number
-    following: number
-    booksRead: number
-  }
+    reviews: number;
+    followers: number;
+    following: number;
+    booksRead: number;
+  };
 }
 
 interface ProfileDetailsProps {
-  profile: ProfileDetails
-  onSave: (profile: ProfileDetails) => void
+  profile: ProfileDetails;
+  onSave: (profile: ProfileDetails) => void;
 }
 
-export function ProfileDetails({ profile: initialProfile, onSave }: ProfileDetailsProps) {
-  const [isEditing, setIsEditing] = useState(false)
-  const [profile, setProfile] = useState(initialProfile)
+export function ProfileDetails({
+  profile: initialProfile,
+  onSave,
+}: ProfileDetailsProps) {
+  const [isEditing, setIsEditing] = useState(false);
+  const [profile, setProfile] = useState(initialProfile);
 
   const handleSave = () => {
-    onSave(profile)
-    setIsEditing(false)
-  }
+    onSave(profile);
+    setIsEditing(false);
+  };
 
   const handleCancel = () => {
-    setProfile(initialProfile)
-    setIsEditing(false)
-  }
+    setProfile(initialProfile);
+    setIsEditing(false);
+  };
 
   return (
     <div className="bg-white rounded-lg shadow-sm">
-      <div className="relative h-48 bg-gradient-to-r from-[#4527A0] to-purple-600 rounded-t-lg">
+      <div className="relative h-48 bg-gradient-to-r from-[#2f5583] to-blue-300 rounded-t-lg">
         <div className="absolute -bottom-16 left-8">
           <div className="relative w-32 h-32 rounded-full border-4 border-white overflow-hidden">
             <Image
@@ -74,7 +77,9 @@ export function ProfileDetails({ profile: initialProfile, onSave }: ProfileDetai
             {isEditing ? (
               <Input
                 value={profile.name}
-                onChange={(e) => setProfile({ ...profile, name: e.target.value })}
+                onChange={(e) =>
+                  setProfile({ ...profile, name: e.target.value })
+                }
                 className="text-2xl font-bold"
               />
             ) : (
@@ -134,7 +139,9 @@ export function ProfileDetails({ profile: initialProfile, onSave }: ProfileDetai
               {isEditing ? (
                 <Input
                   value={profile.location}
-                  onChange={(e) => setProfile({ ...profile, location: e.target.value })}
+                  onChange={(e) =>
+                    setProfile({ ...profile, location: e.target.value })
+                  }
                 />
               ) : (
                 <p>{profile.location}</p>
@@ -145,10 +152,15 @@ export function ProfileDetails({ profile: initialProfile, onSave }: ProfileDetai
               {isEditing ? (
                 <Input
                   value={profile.website}
-                  onChange={(e) => setProfile({ ...profile, website: e.target.value })}
+                  onChange={(e) =>
+                    setProfile({ ...profile, website: e.target.value })
+                  }
                 />
               ) : (
-                <a href={profile.website} className="text-[#4527A0] hover:underline">
+                <a
+                  href={profile.website}
+                  className="text-[#4527A0] hover:underline"
+                >
                   {profile.website}
                 </a>
               )}
@@ -158,7 +170,9 @@ export function ProfileDetails({ profile: initialProfile, onSave }: ProfileDetai
               {isEditing ? (
                 <Input
                   value={profile.email}
-                  onChange={(e) => setProfile({ ...profile, email: e.target.value })}
+                  onChange={(e) =>
+                    setProfile({ ...profile, email: e.target.value })
+                  }
                 />
               ) : (
                 <p>{profile.email}</p>
@@ -172,6 +186,5 @@ export function ProfileDetails({ profile: initialProfile, onSave }: ProfileDetai
         </div>
       </div>
     </div>
-  )
+  );
 }
-

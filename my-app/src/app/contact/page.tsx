@@ -1,5 +1,5 @@
 import Navbar from "@/components/navbar";
-import ContactUs from "@/components/contactus";
+import ContactUs from "@/components/contactUs";
 import Footer from "@/components/footer";
 const contactUs = () => {
   return (

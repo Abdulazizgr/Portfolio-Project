@@ -1,11 +1,13 @@
 "use client";
 
-import { BookCover } from "@/components/bookcover";
-import { BookInfo } from "@/components/bookinfo";
+import { BookCover } from "@/components/bookCover";
+import { BookInfo } from "@/components/bookInfo";
 import { AuthorSection } from "@/components/AuthorSection";
 import { BookRecommendations } from "@/components/BookRecommendations";
 import { RatingsReviews } from "@/components/RatingsReviews";
 import { ReviewList } from "@/components/review-list";
+import Navbar from "@/components/navbar";
+import Footer from "@/components/footer";
 
 export default function BookDetails() {
   const book = {
@@ -204,7 +206,9 @@ export default function BookDetails() {
   ];
 
   return (
-    <div className="container mx-auto px-4">
+    <>
+   <Navbar />
+    <div className="container mx-auto px-4 py-8">
       <div className="flex flex-col lg:flex-row gap-8">
         {/* Left Column - Fixed Book Cover */}
         <div className="lg:w-1/3">
@@ -225,5 +229,7 @@ export default function BookDetails() {
         </div>
       </div>
     </div>
+    <Footer />
+    </>
   );
 }
