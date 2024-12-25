@@ -278,10 +278,10 @@ export default function BookListing() {
             {books.map((book) => (
               <Link
                 key={book.id}
-                href={`/books/${book.id}`}
+                href={`/bookdetails/${book.id}`}
                 className={`group ${
                   viewMode === "list" ? "flex gap-6" : "flex flex-col"
-                }`}
+                }`} 
               >
                 <div className="w-56 flex-shrink-0 ">
                   <div className="relative aspect-[3/4]">

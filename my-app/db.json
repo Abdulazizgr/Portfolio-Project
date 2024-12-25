@@ -1,0 +1,194 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "email": "john.doe@example.com",
+      "username": "johndoe",
+      "password": "password123",
+      "profileImage": "https://randomuser.me/api/portraits/men/1.jpg",
+      "bio": "Avid reader and aspiring author. I love discussing books and sharing my thoughts on the latest reads.",
+      "reviews": ["1", "2"],
+      "readingLists": [
+        {
+          "name": "Summer Reads",
+          "books": ["1", "3"]
+        },
+        {
+          "name": "Classics",
+          "books": ["2", "4"]
+        }
+      ],
+      "favoriteBooks": ["1", "4"],
+      "following": ["2"],
+      "followers": ["2", "3"]
+    },
+    {
+      "id": "2",
+      "email": "jane.smith@example.com",
+      "username": "janesmith",
+      "password": "securepass456",
+      "profileImage": "https://randomuser.me/api/portraits/women/1.jpg",
+      "bio": "Book enthusiast with a penchant for mystery novels. Always on the lookout for the next great read!",
+      "reviews": ["3", "4"],
+      "readingLists": [
+        {
+          "name": "Mystery Favorites",
+          "books": ["3", "5"]
+        }
+      ],
+      "favoriteBooks": ["3", "5"],
+      "following": ["1", "3"],
+      "followers": ["1"]
+    },
+    {
+      "id": "3",
+      "email": "sam.wilson@example.com",
+      "username": "samwilson",
+      "password": "bookworm789",
+      "profileImage": "https://randomuser.me/api/portraits/men/2.jpg",
+      "bio": "Sci-fi and fantasy lover. I enjoy exploring new worlds through books.",
+      "reviews": ["5"],
+      "readingLists": [
+        {
+          "name": "Sci-Fi Essentials",
+          "books": ["5"]
+        }
+      ],
+      "favoriteBooks": ["2", "5"],
+      "following": ["1"],
+      "followers": ["2"]
+    }
+  ],
+  "books": [
+    {
+      "id": "1",
+      "title": "The Great Gatsby",
+      "author": "F. Scott Fitzgerald",
+      "isbn": "9780743273565",
+      "publishDate": "1925-04-10",
+      "genre": ["Classic", "Fiction"],
+      "coverImage": "https://example.com/great-gatsby-cover.jpg",
+      "description": "A classic novel about the American Dream set in the Roaring Twenties.",
+      "reviews": ["1"],
+      "averageRating": 4.5
+    },
+    {
+      "id": "2",
+      "title": "To Kill a Mockingbird",
+      "author": "Harper Lee",
+      "isbn": "9780446310789",
+      "publishDate": "1960-07-11",
+      "genre": ["Classic", "Fiction"],
+      "coverImage": "https://example.com/to-kill-a-mockingbird-cover.jpg",
+      "description": "A powerful story of racial injustice and loss of innocence in the American South.",
+      "reviews": ["2"],
+      "averageRating": 4.8
+    },
+    {
+      "id": "3",
+      "title": "The Girl with the Dragon Tattoo",
+      "author": "Stieg Larsson",
+      "isbn": "9780307454546",
+      "publishDate": "2005-08-23",
+      "genre": ["Mystery", "Thriller"],
+      "coverImage": "https://example.com/girl-with-dragon-tattoo-cover.jpg",
+      "description": "A gripping mystery thriller featuring a brilliant but troubled investigator.",
+      "reviews": ["3"],
+      "averageRating": 4.2
+    },
+    {
+      "id": "4",
+      "title": "Pride and Prejudice",
+      "author": "Jane Austen",
+      "isbn": "9780141439518",
+      "publishDate": "1813-01-28",
+      "genre": ["Classic", "Romance"],
+      "coverImage": "https://example.com/pride-and-prejudice-cover.jpg",
+      "description": "A timeless romance exploring themes of love, class, and societal expectations.",
+      "reviews": ["4"],
+      "averageRating": 4.7
+    },
+    {
+      "id": "5",
+      "title": "Dune",
+      "author": "Frank Herbert",
+      "isbn": "9780441172719",
+      "publishDate": "1965-08-01",
+      "genre": ["Science Fiction"],
+      "coverImage": "https://example.com/dune-cover.jpg",
+      "description": "An epic science fiction novel set in a distant future amidst a feudal interstellar society.",
+      "reviews": ["5"],
+      "averageRating": 4.6
+    }
+  ],
+  "reviews": [
+    {
+      "id": "1",
+      "user": "1",
+      "book": "1",
+      "rating": 5,
+      "title": "A true masterpiece",
+      "content": "The Great Gatsby is a beautifully written novel that captures the essence of the Roaring Twenties. Fitzgerald's prose is lyrical and evocative, painting a vivid picture of the era's excesses and the hollow pursuit of the American Dream. The characters are complex and flawed, making them feel incredibly real and relatable. This book is a must-read for anyone interested in classic American literature.",
+      "likes": ["2", "3"],
+      "comments": [
+        {
+          "user": "2",
+          "content": "I couldn't agree more! The symbolism throughout the book is just incredible.",
+          "createdAt": "2023-06-15T14:30:00Z"
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "user": "1",
+      "book": "2",
+      "rating": 5,
+      "title": "A powerful and timeless classic",
+      "content": "To Kill a Mockingbird is a profound exploration of racial injustice and moral growth. Harper Lee's storytelling is masterful, using the perspective of a child to tackle complex and difficult themes. The character of Atticus Finch is one of the most admirable in literature, embodying integrity and moral courage. This book left a lasting impact on me and I believe it's essential reading for everyone.",
+      "likes": ["3"],
+      "comments": []
+    },
+    {
+      "id": "3",
+      "user": "2",
+      "book": "3",
+      "rating": 4,
+      "title": "A gripping thriller with a unique protagonist",
+      "content": "The Girl with the Dragon Tattoo is a page-turner that kept me engaged from start to finish. Lisbeth Salander is one of the most intriguing characters I've encountered in fiction - complex, brilliant, and fiercely independent. The mystery at the heart of the story is well-crafted and suspenseful. While some parts of the book can be quite dark and intense, it's a rewarding read for fans of the genre.",
+      "likes": ["1"],
+      "comments": []
+    },
+    {
+      "id": "4",
+      "user": "2",
+      "book": "4",
+      "rating": 5,
+      "title": "A delightful and witty romance",
+      "content": "Pride and Prejudice is a joy to read. Jane Austen's wit and keen observations of human nature shine through in every page. The banter between Elizabeth and Mr. Darcy is delightful, and watching their relationship evolve is thoroughly satisfying. Despite being written over 200 years ago, the themes of love, pride, and societal expectations still resonate today. It's a timeless classic for a reason!",
+      "likes": ["1", "3"],
+      "comments": [
+        {
+          "user": "3",
+          "content": "Elizabeth Bennet is such a fantastic character. She's smart, witty, and ahead of her time!",
+          "createdAt": "2023-06-16T10:15:00Z"
+        }
+      ]
+    },
+    {
+      "id": "5",
+      "user": "3",
+      "book": "5",
+      "rating": 5,
+      "title": "An epic sci-fi masterpiece",
+      "content": "Dune is a monumental work of science fiction that transcends the genre. Herbert creates a richly detailed universe with complex political, religious, and ecological systems. The story of Paul Atreides is both a hero's journey and a cautionary tale about the dangers of messianic figures. The book's exploration of themes like power, religion, and the environment feels incredibly relevant even decades after its publication. It's a challenging but incredibly rewarding read.",
+      "likes": ["1", "2"],
+      "comments": [
+        {
+          "user": "1",
+          "content": "I love how Herbert blends sci-fi elements with philosophy and ecology. It's so much more than just a space opera!",
+          "createdAt": "2023-06-17T09:45:00Z"
+        }
+      ]
+    }
+  ]
+}
