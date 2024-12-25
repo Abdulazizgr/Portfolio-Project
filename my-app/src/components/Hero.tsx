@@ -5,7 +5,6 @@ import Image from "next/image";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Search } from "lucide-react";
-// import img from "@/public/download.jpeg";
 
 export default function Hero() {
   const [activeSlide, setActiveSlide] = useState(0);
@@ -15,51 +14,50 @@ export default function Hero() {
     {
       title: "Ipsum Dolor Si",
       description:
-        " lorem*3Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu feugiat amet, libero ipsum enim pharetra hac. Urna commodo, lacus ut magna velit eleifend. Amet, quis urna, a eu Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur explicabo nemo odit repellendus dolor excepturi illo, eaque, non provident, dolores itaque quas iusto! Vitae blanditiis a odio, deserunt consequatur molestiae..",
-    },
-    {
-      title: "Ipsum Dolor Si",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu feugiat amet, libero ipsum enim pharetra hac. Urna commodo, lacus ut magna velit eleifend. Amet, quis urna, a eu. lorem*0.4  ",
-    },
-    {
-      title: "Ipsum Dolor Si",
-      description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu feugiat amet, libero ipsum enim pharetra hac. Urna commodo, lacus ut magna velit eleifend. Amet, quis urna, a eu.",
     },
     {
-      title: "Ipsum Dolor Si",
+      title: "Consectetur Adipiscing",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu feugiat amet, libero ipsum enim pharetra hac. Urna commodo, lacus ut magna velit eleifend. Amet, quis urna, a eu.eeee",
+        "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
     },
     {
-      title: "Ipsum Dolor Si",
+      title: "Sed Eu Feugiat",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu feugiat amet, libero ipsum enim pharetra hac. Urna commodo, lacus ut magna velit eleifend. Amet, quis urna, a eu.eeee",
+        "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.",
+    },
+    {
+      title: "Urna Commodo",
+      description:
+        "Sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    },
+    {
+      title: "Lacus Ut Magna",
+      description:
+        "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore.",
     },
   ];
 
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle search functionality here
     console.log("Searching for:", searchQuery);
   };
 
   return (
-    <div className="relative min-h-[600px] bg-[#F9F8F4] from-pink-50 to-white h-screen">
-      <div className="container mx-auto px-8 pl-10 py-12">
-        <div className="grid lg:grid-cols-2 gap-8 items-center">
+    <div className="relative min-h-screen bg-[#F9F8F4] py-12 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto">
+        <div className="lg:grid lg:grid-cols-2 lg:gap-8 items-center">
           {/* Text Content */}
-          <div className="max-w-xl">
-            <h2 className="text-4xl font-bold text-[#1E1915] mb-4">
+          <div className="max-w-xl mx-auto lg:mx-0">
+            <h2 className="text-3xl sm:text-4xl font-bold text-[#1E1915] mb-4">
               {slides[activeSlide].title}
             </h2>
-            <p className="text-[#1E1915] mb-6">
+            <p className="text-[#1E1915] mb-6 text-sm sm:text-base">
               {slides[activeSlide].description}
             </p>
 
             {/* Search Bar */}
-            <form onSubmit={handleSearch} className="flex gap-2">
+            <form onSubmit={handleSearch} className="flex gap-2 mb-8">
               <div className="relative flex-1">
                 <Input
                   type="text"
@@ -71,7 +69,7 @@ export default function Hero() {
               </div>
               <Button
                 type="submit"
-                className="bg-[#1E1915] text-white hover:bg-[#4e4137] rounded-full px-6"
+                className="bg-[#1E1915] text-white hover:bg-[#4e4137] rounded-full px-4 sm:px-6"
               >
                 <Search className="h-4 w-4" />
                 <span className="sr-only">Search</span>
@@ -79,7 +77,7 @@ export default function Hero() {
             </form>
 
             {/* Pagination Dots */}
-            <div className="flex gap-2 mt-8">
+            <div className="flex justify-center lg:justify-start gap-2">
               {slides.map((_, index) => (
                 <button
                   key={index}
@@ -95,76 +93,78 @@ export default function Hero() {
           </div>
 
           {/* Book Covers Grid */}
-          <div className="relative h-[500px] hidden md:block">
+          <div className="mt-12 lg:mt-0 relative h-[400px] sm:h-[500px] hidden sm:block">
             {/* Book 1 */}
-            <div className="absolute top-20 left-[10%] transform  hover:rotate-0 transition-transform">
+            <div className="absolute top-[10%] left-[10%] transform hover:scale-105 transition-transform">
               <Image
-                src="/download.jpeg?height=280&width=200"
+                src="/download.jpeg"
                 alt="2020 World of War"
-                width={200}
-                height={280}
-                className="rounded-lg shadow-2xl "
+                width={160}
+                height={224}
+                className="rounded-lg shadow-2xl"
               />
             </div>
 
             {/* Book 2 */}
-            <div className="absolute bottom-0 right-[10%] transform rotate-0 hover:rotate-0 transition-transform">
+            <div className="absolute bottom-[5%] right-[10%] transform hover:scale-105 transition-transform">
               <Image
-                src="/h.jpg?height=280&width=200"
+                src="/h.jpg"
                 alt="At War on the Gothic Line"
-                width={200}
-                height={280}
-                className="w-[200px] h-auto rounded-lg shadow-xl md:w-[120px]"
+                width={140}
+                height={196}
+                className="rounded-lg shadow-xl"
               />
             </div>
 
             {/* Book 3 */}
-            <div className="absolute top-0 left-[40%] transform -rotate- hover:rotate-0 transition-transform">
+            <div className="absolute top-[5%] left-[40%] transform hover:scale-105 transition-transform">
               <Image
                 src="/i.jpg"
                 alt="The Time Traveller's Handbook"
-                width={280} // Adjust the width here
-                height={160} // Adjust the height here
-                className="w-[200px] h-auto rounded-lg shadow-xl md:w-[150px]" // Tailwind for responsive resizing
+                width={180}
+                height={120}
+                className="rounded-lg shadow-xl"
               />
             </div>
 
             {/* Book 4 */}
-            <div className="absolute top-4 right-[3%] transform rotate- hover:rotate-0 transition-transform">
+            <div className="absolute top-[15%] right-[5%] transform hover:scale-105 transition-transform">
               <Image
-                src="/g.jpg?height=280&width=200"
+                src="/g.jpg"
                 alt="Doctor Who"
-                width={200}
-                height={280}
+                width={150}
+                height={210}
                 className="rounded-lg shadow-xl"
               />
             </div>
 
             {/* Book 5 */}
-            <div className="absolute bottom-[1%] left-[43%] transform -rotate- hover:rotate-0 transition-transform">
+            <div className="absolute bottom-[10%] left-[30%] transform hover:scale-105 transition-transform">
               <Image
-                src="/d.webp?height=280&width=200"
+                src="/d.webp"
                 alt="Slipfest"
-                width={200}
-                height={280}
-                className="w-[200px] h-auto rounded-lg shadow-xl md:w-[170px]"
+                width={170}
+                height={238}
+                className="rounded-lg shadow-xl"
               />
             </div>
           </div>
 
           {/* Mobile Book Grid */}
-          <div className="grid grid-cols-2 gap-4 md:hidden">
-            {[...Array(5)].map((_, index) => (
-              <div key={index} className="aspect-[3/4]">
-                <Image
-                  src="/placeholder.svg?height=280&width=200"
-                  alt={`Book ${index + 1}`}
-                  width={200}
-                  height={280}
-                  className="rounded-lg shadow-md w-full h-full object-cover"
-                />
-              </div>
-            ))}
+          <div className="grid grid-cols-2 gap-4 mt-8 sm:hidden">
+            {["/download.jpeg", "/h.jpg", "/i.jpg", "/g.jpg", "/d.webp"].map(
+              (src, index) => (
+                <div key={index} className="aspect-[3/4]">
+                  <Image
+                    src={src}
+                    alt={`Book ${index + 1}`}
+                    width={200}
+                    height={280}
+                    className="rounded-lg shadow-md w-full h-full object-cover"
+                  />
+                </div>
+              )
+            )}
           </div>
         </div>
       </div>
