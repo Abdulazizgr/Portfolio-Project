@@ -56,7 +56,7 @@ export default function Navbar() {
               Home
             </Link>
             <Link
-              href="/my-books"
+              href="/myBooks"
               className="text-sm text-[#1E1915] font-medium relative after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-0.5 after:bg-black after:transition-all after:duration-300 hover:after:w-full hover:text-gray-600 active:text-gray-800"
             >
               My Books
@@ -154,7 +154,7 @@ export default function Navbar() {
                       Home
                     </Link>
                     <Link
-                      href="/my-books"
+                      href="/myBooks"
                       className="block py-2 text-sm font-medium"
                     >
                       My Books

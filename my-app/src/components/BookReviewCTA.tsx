@@ -10,7 +10,7 @@ export default function BookReviewCTA() {
       <div className="container mx-auto">
         <div className="grid lg:grid-cols-2 gap-8 items-center">
           {/* Left Content */}
-          <div className="space-y-6 p-8 lg:p-12 bg-[#] ">
+          <div className="space-y-6 p-8 lg:p-12  ">
             <div className="inline-block">
               <span className="text-blue-700 text-sm font-medium bg-blue-500/10 px-3 py-1 rounded-full">
                 book reviews
@@ -81,7 +81,7 @@ export default function BookReviewCTA() {
           </div>
 
           {/* Right Image */}
-          <div className="relative h-[500px] hidden lg:block overflow-hidden ">
+          <div className="relative h-[599px] hidden lg:block overflow-hidden ">
             <Image
               src="/cta.webp"
               alt="Person reading books"

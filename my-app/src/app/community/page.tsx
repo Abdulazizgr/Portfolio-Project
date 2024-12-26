@@ -32,7 +32,7 @@ const CommunityPage = () => {
       id: 2,
       name: "Classic Literature",
       members: 987,
-      image: "/g.jpg?height=100&width=100",
+      image: "/s1.jpg?height=100&width=100",
     },
     {
       id: 3,

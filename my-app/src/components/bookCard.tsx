@@ -9,31 +9,31 @@ export default function BookCard() {
   const books = [
     {
       id: 1,
-      title: "Simple Way Of Piece Life",
-      author: "Armor Ramsey",
+      title: "The Burning Earth",
+      author: "Sunil Amrith",
       rating: 4.5,
-      image: "/h.jpg",
+      image: "/z.webp",
     },
     {
       id: 2,
-      title: "Great Travel At Desert",
-      author: "Sanchit Howdy",
+      title: "Thinking, Fast and Slow",
+      author: "Daniel Kahneman",
       rating: 4.2,
-      image: "/h.jpg",
+      image: "/y.jpg",
     },
     {
       id: 3,
-      title: "The Lady Beauty Scarlett",
-      author: "Arthur Doyle",
+      title: "The Art of War",
+      author: "Thomas Cleary",
       rating: 4.8,
-      image: "/h.jpg",
+      image: "/x.jpg",
     },
     {
       id: 4,
-      title: "Once Upon A Time",
-      author: "Klien Marry",
+      title: "Emotional Intelligence",
+      author: "Daniel Goleman",
       rating: 4.0,
-      image: "/h.jpg",
+      image: "/v.jpg",
     },
   ];
 
@@ -73,7 +73,7 @@ export default function BookCard() {
           {books.map((book) => (
             <div key={book.id} className="group  p-4">
               <div className="relative aspect-[3/4] mb-4 shadow-2xl rounded-xl">
-                <Link href="/products">
+                <Link href="/bookdetails/1">
                   <Image
                     src={book.image}
                     alt={book.title}
@@ -103,7 +103,7 @@ export default function BookCard() {
             <button className="w-2 h-2 rounded-full bg-gray-200" />
             <button className="w-2 h-2 rounded-full bg-gray-200" />
           </div> */}
-          <Link href="/">
+          <Link href="/myBooks">
             <Button
               variant="outline"
               className="rounded-full border-2 py-5 px-10  text-[#1E1915]  bg-[F4F1EA] border-[#2f4858]  hover:bg-[#363634] hover:text-white transition-colors"

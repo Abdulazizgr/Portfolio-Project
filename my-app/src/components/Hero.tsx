@@ -12,29 +12,29 @@ export default function Hero() {
 
   const slides = [
     {
-      title: "Ipsum Dolor Si",
+      title: "Discover Your Next Favorite Book",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu feugiat amet, libero ipsum enim pharetra hac. Urna commodo, lacus ut magna velit eleifend. Amet, quis urna, a eu.",
+        "Explore a curated selection of books and uncover the stories that resonate with you. Dive into detailed reviews, ratings, and personalized recommendations.",
     },
     {
-      title: "Consectetur Adipiscing",
+      title: "Join Our Book-Loving Community",
       description:
-        "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+        "Connect with fellow book enthusiasts, share your thoughts, and participate in engaging discussions. Together, let's celebrate the joy of reading.",
     },
     {
-      title: "Sed Eu Feugiat",
+      title: "Write and Share Reviews",
       description:
-        "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.",
+        "Make your voice heard by sharing your insights and opinions on the books you've read. Help others discover hidden gems and avoid disappointments.",
     },
     {
-      title: "Urna Commodo",
+      title: "Organize Your Virtual Bookshelf",
       description:
-        "Sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "Keep track of what you've read, what you're reading, and what you want to read. Create and customize your personal book collections with ease.",
     },
     {
-      title: "Lacus Ut Magna",
+      title: "Search and Discover Effortlessly",
       description:
-        "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore.",
+        "Find books by title, author, genre, or rating in just a few clicks. Our powerful search tools make discovering your next read a breeze.",
     },
   ];
 
@@ -95,7 +95,7 @@ export default function Hero() {
           {/* Book Covers Grid */}
           <div className="mt-12 lg:mt-0 relative h-[400px] sm:h-[500px] hidden sm:block">
             {/* Book 1 */}
-            <div className="absolute top-[10%] left-[10%] transform hover:scale-105 transition-transform">
+            <div className="absolute top-[10%] left-[10%] transform hover:scale-105 transition-transform shadow-2xl ">
               <Image
                 src="/download.jpeg"
                 alt="2020 World of War"

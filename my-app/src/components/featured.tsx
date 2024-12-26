@@ -28,9 +28,11 @@ export default function FeaturedBook() {
 
             <div className="space-y-2">
               <p className="text-sm text-gray-500 uppercase tracking-wider">
-                BY TIMBUR HOOD
+                BY J Deven
               </p>
-              <h3 className="text-2xl font-semibold">Birds Gonna Be Happy</h3>
+              <h3 className="text-2xl font-semibold">
+                Be Happy: Excerpts from The Teachings of Sung Zui
+              </h3>
             </div>
 
             <div className="flex items-center gap-2">
@@ -44,8 +46,10 @@ export default function FeaturedBook() {
             </div>
 
             <p className="text-gray-600 leading-relaxed">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu
-              feugiat amet, libero ipsum enim pharetra hac.
+              AD 1212 – Between the mountains of the North-East of India and
+              China lived the Master Sung Zui. He used to wander everywhere to
+              find a disciple; rarely the enlightened masters did this at the
+              time.
             </p>
 
             <div className="flex flex-wrap gap-4 pb-10">
@@ -61,14 +65,14 @@ export default function FeaturedBook() {
               </div>
             </div>
 
-            <Link href="/books/birds-gonna-be-happy">
+            <Link href="/bookdetails/1">
               <Button
                 variant="outline"
                 className="rounded-full  border-2 border-[#363634] text-[#363634] hover:bg-[#363634] hover:text-white transition-colors"
               >
                 VIEW MORE →
               </Button>
-            </Link> 
+            </Link>
           </div>
         </div>
       </div>

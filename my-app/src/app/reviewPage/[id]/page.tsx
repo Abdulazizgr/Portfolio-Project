@@ -28,6 +28,7 @@ import { Switch } from "@/components/ui/switch";
 import { toast } from "react-toastify";
 import { Star, BookOpen } from "lucide-react";
 import Footer from "@/components/footer";
+import Navbar from "@/components/navbar";
 
 const formSchema = z.object({
   bookTitle: z.string().min(1, "Book title is required"),
@@ -82,6 +83,7 @@ export default function WriteReview() {
 
   return (
     <>
+      <Navbar />
       <div className="container mx-auto px-20 max-w-4xl py-8">
         <h1 className="text-3xl font-bold mb-6">Write a Book Review</h1>
 

@@ -33,56 +33,74 @@ export default function BookListing() {
   const books = [
     {
       id: 1,
-      title: "Simple Way Of Piece Life",
-      author: "Armor Ramsey",
+      title: "Demon Copperhead",
+      author: "Barbara Kingsolver",
       rating: 4.5,
       reviewCount: 128,
-      image: "/f.jpg?height=400&width=300",
-      genre: "Self Help",
+      image: "/f1.jpg?height=400&width=300",
+      genre: "Fiction,Historical Fiction,Audiobook ",
     },
     {
       id: 2,
-      title: "Great Travel At Desert",
-      author: "Sanchit Howdy",
+      title: "A Little Life",
+      author: "Hanya Yanagihara",
       rating: 4.2,
       reviewCount: 85,
-      image: "/f.jpg?height=400&width=300",
-      genre: "Travel",
+      image: "/f2.jpg?height=400&width=300",
+      genre: "Fiction",
     },
     {
       id: 3,
-      title: "The Lady Beauty Scarlett",
-      author: "Arthur Doyle",
+      title: "The Frozen River",
+      author: "Ariel Lawhon",
       rating: 4.8,
       reviewCount: 245,
-      image: "/f.jpg?height=400&width=300",
+      image: "/h2.jpg?height=400&width=300",
       genre: "Fiction",
     },
     {
       id: 4,
-      title: "The Mystery of the Blue Train",
-      author: "Agatha Christie",
+      title: "All the Light We Cannot See",
+      author: "Anthony Doerr",
       rating: 4.6,
       reviewCount: 189,
-      image: "/f.jpg?height=400&width=300",
+      image: "/h1.jpg?height=400&width=300",
       genre: "Mystery",
     },
     {
       id: 5,
-      title: "The Silent Patient",
-      author: "Alex Michaelides",
+      title: "First Lie Wins",
+      author: "Ashley Elston",
       rating: 4.7,
       reviewCount: 312,
-      image: "/f.jpg?height=400&width=300",
+      image: "/m1.jpg?height=400&width=300",
       genre: "Thriller",
     },
     {
       id: 6,
-      title: "The Midnight Library",
-      author: "Matt Haig",
+      title: "Rock Paper Scissors",
+      author: "Alice Feeney",
       rating: 4.4,
       reviewCount: 276,
-      image: "/f.jpg?height=400&width=300",
+      image: "/m2.jpg?height=400&width=300",
+      genre: "Fiction",
+    },
+    {
+      id: 7,
+      title: "Dune",
+      author: "Frank Herbert",
+      rating: 4.4,
+      reviewCount: 276,
+      image: "/s1.jpg?height=400&width=300",
+      genre: "Fiction",
+    },
+    {
+      id: 8,
+      title: "All Systems Red",
+      author: "Martha Wells",
+      rating: 4.4,
+      reviewCount: 276,
+      image: "/s2.jpg?height=400&width=300",
       genre: "Fiction",
     },
   ];
@@ -281,7 +299,7 @@ export default function BookListing() {
                 href={`/bookdetails/${book.id}`}
                 className={`group ${
                   viewMode === "list" ? "flex gap-6" : "flex flex-col"
-                }`} 
+                }`}
               >
                 <div className="w-56 flex-shrink-0 ">
                   <div className="relative aspect-[3/4]">

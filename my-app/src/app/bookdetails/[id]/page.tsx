@@ -20,7 +20,7 @@ export default function BookDetails() {
     totalReviews: 2802,
     awards: [
       {
-        name: "Goodreads Choice Award",
+        name: " lorem Choice Award",
         category: "Nominee for Readers' Favorite Nonfiction (2021)",
       },
     ],
@@ -207,29 +207,29 @@ export default function BookDetails() {
 
   return (
     <>
-   <Navbar />
-    <div className="container mx-auto px-4 py-8">
-      <div className="flex flex-col lg:flex-row gap-8">
-        {/* Left Column - Fixed Book Cover */}
-        <div className="lg:w-1/3">
-          <BookCover
-            title={book.title}
-            coverImage={book.coverImage}
-            onRatingChange={(rating) => console.log("New rating:", rating)}
-          />
-        </div>
+      <Navbar />
+      <div className="container mx-auto px-4 py-8">
+        <div className="flex flex-col lg:flex-row gap-8">
+          {/* Left Column - Fixed Book Cover */}
+          <div className="lg:w-1/3">
+            <BookCover
+              title={book.title}
+              coverImage={book.coverImage}
+              onRatingChange={(rating) => console.log("New rating:", rating)}
+            />
+          </div>
 
-        {/* Right Column - Scrollable Content */}
-        <div className="lg:w-2/3">
-          <BookInfo book={book} />
-          <AuthorSection {...author} />
-          <RatingsReviews ratings={ratingsData} />
-          <ReviewList totalReviews={3345} reviews={reviews} />
-          <BookRecommendations books={recommendations} />
+          {/* Right Column - Scrollable Content */}
+          <div className="lg:w-2/3">
+            <BookInfo book={book} />
+            <AuthorSection {...author} />
+            <RatingsReviews ratings={ratingsData} />
+            <ReviewList totalReviews={3345} reviews={reviews} />
+            <BookRecommendations books={recommendations} />
+          </div>
         </div>
       </div>
-    </div>
-    <Footer />
+      <Footer />
     </>
   );
 }
