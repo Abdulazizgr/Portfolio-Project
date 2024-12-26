@@ -74,31 +74,7 @@ export default function Navbar() {
             >
               Community
             </Link>
-            {/* 
-            <DropdownMenu>
-              <DropdownMenuTrigger
-                className="flex items-center gap-1 
-             text-sm text-[#1E1915] font-medium relative after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-0.5 after:bg-black after:transition-all after:duration-300 hover:after:w-full hover:text-gray-600 active:text-gray-800"
-              >
-                Reviews <ChevronDown className="h-4 w-4" />
-              </DropdownMenuTrigger>
-              <DropdownMenuContent className="bg-[#F9F8F4]">
-                <DropdownMenuItem>Test </DropdownMenuItem>
-                <DropdownMenuItem>Test</DropdownMenuItem>
-                <DropdownMenuItem>Test</DropdownMenuItem>
-              </DropdownMenuContent>
-            </DropdownMenu>
-            <DropdownMenu>
-              <DropdownMenuTrigger className="flex items-center gap-1 text-sm text-[#1E1915] font-medium relative after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-0.5 after:bg-black after:transition-all after:duration-300 hover:after:w-full hover:text-gray-600 active:text-gray-800">
-                Community <ChevronDown className="h-4 w-4" />
-              </DropdownMenuTrigger>
-              <DropdownMenuContent className="bg-[#F4F1EA]">
-                <DropdownMenuItem>Test</DropdownMenuItem>
-                <DropdownMenuItem>Test</DropdownMenuItem>
-                <DropdownMenuItem>Test</DropdownMenuItem>
-              </DropdownMenuContent>
-            </DropdownMenu>
-         */}
+           
           </div>
 
           {/* Login Button or Profile and Mobile Menu */}
@@ -171,62 +147,7 @@ export default function Navbar() {
                     >
                       Community
                     </Link>
-                    {/* <Accordion type="single" collapsible>
-                      <AccordionItem value="reviews">
-                        <AccordionTrigger className="text-sm font-medium">
-                          Reviews
-                        </AccordionTrigger>
-                        <AccordionContent>
-                          <div className="pl-4 space-y-2">
-                            <Link
-                              href="/reviews/latest"
-                              className="block py-2 text-sm"
-                            >
-                              Test
-                            </Link>
-                            <Link
-                              href="/reviews/write"
-                              className="block py-2 text-sm"
-                            >
-                              Test
-                            </Link>
-                            <Link
-                              href="/reviews/my"
-                              className="block py-2 text-sm"
-                            >
-                              Test
-                            </Link>
-                          </div>
-                        </AccordionContent>
-                      </AccordionItem>
-                      <AccordionItem value="community">
-                        <AccordionTrigger className="text-sm font-medium">
-                          Test
-                        </AccordionTrigger>
-                        <AccordionContent>
-                          <div className="pl-4 space-y-2">
-                            <Link
-                              href="/community/discussion"
-                              className="block py-2 text-sm"
-                            >
-                              Test
-                            </Link>
-                            <Link
-                              href="/community/book-clubs"
-                              className="block py-2 text-sm"
-                            >
-                              Test
-                            </Link>
-                            <Link
-                              href="/community/events"
-                              className="block py-2 text-sm"
-                            >
-                              Test
-                            </Link>
-                          </div>
-                        </AccordionContent>
-                      </AccordionItem>
-                    </Accordion> */}
+                   
                     {isLoggedIn ? (
                       <>
                         <Link
