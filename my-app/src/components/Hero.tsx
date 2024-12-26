@@ -44,7 +44,7 @@ export default function Hero() {
   };
 
   return (
-    <div className="relative min-h-screen bg-[#F9F8F4] py-12 px-4 sm:px-6 lg:px-8">
+    <div className="relative md:min-h-screen bg-[#F9F8F4] py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <div className="lg:grid lg:grid-cols-2 lg:gap-8 items-center">
           {/* Text Content */}
@@ -93,7 +93,7 @@ export default function Hero() {
           </div>
 
           {/* Book Covers Grid */}
-          <div className="mt-12 lg:mt-0 relative h-[400px] sm:h-[500px] hidden sm:block">
+          <div className="mt-12 lg:mt-0 relative h-[400px] sm:h-[500px] hidden md:block">
             {/* Book 1 */}
             <div className="absolute top-[10%] left-[10%] transform hover:scale-105 transition-transform shadow-2xl ">
               <Image
@@ -101,7 +101,7 @@ export default function Hero() {
                 alt="2020 World of War"
                 width={160}
                 height={224}
-                className="rounded-lg shadow-2xl"
+                className="rounded-lg shadow-2xl hidden md:block"
               />
             </div>
 
