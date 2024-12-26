@@ -7,40 +7,18 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Edit2, Save, X } from "lucide-react";
 
-interface ProfileDetails {
-  name: string;
-  username: string;
-  email: string;
-  bio: string;
-  location: string;
-  website: string;
-  avatar: string;
-  joinDate: string;
-  stats: {
-    reviews: number;
-    followers: number;
-    following: number;
-    booksRead: number;
-  };
-}
+// Component to manage and display user profile details
+export function ProfileDetails({ profile: initialProfile, onSave }: ProfileDetailsProps) {
+  const [isEditing, setIsEditing] = useState(false); // Tracks edit mode state
+  const [profile, setProfile] = useState(initialProfile); // Manages profile data state
 
-interface ProfileDetailsProps {
-  profile: ProfileDetails;
-  onSave: (profile: ProfileDetails) => void;
-}
-
-export function ProfileDetails({
-  profile: initialProfile,
-  onSave,
-}: ProfileDetailsProps) {
-  const [isEditing, setIsEditing] = useState(false);
-  const [profile, setProfile] = useState(initialProfile);
-
+  // Save changes and exit edit mode
   const handleSave = () => {
     onSave(profile);
     setIsEditing(false);
   };
 
+  // Revert changes and exit edit mode
   const handleCancel = () => {
     setProfile(initialProfile);
     setIsEditing(false);
@@ -48,15 +26,11 @@ export function ProfileDetails({
 
   return (
     <div className="bg-white rounded-lg shadow-sm">
+      {/* Header with avatar and edit button */}
       <div className="relative h-48 bg-gradient-to-r from-[#2f5583] to-blue-300 rounded-t-lg">
         <div className="absolute -bottom-16 left-8">
           <div className="relative w-32 h-32 rounded-full border-4 border-white overflow-hidden">
-            <Image
-              src={profile.avatar}
-              alt={profile.name}
-              fill
-              className="object-cover"
-            />
+            <Image src={profile.avatar} alt={profile.name} fill className="object-cover" />
           </div>
         </div>
         {!isEditing && (
@@ -71,15 +45,15 @@ export function ProfileDetails({
         )}
       </div>
 
+      {/* Profile content */}
       <div className="pt-20 px-8 pb-8">
+        {/* Display/edit name and username */}
         <div className="flex justify-between items-start mb-6">
           <div className="space-y-1">
             {isEditing ? (
               <Input
                 value={profile.name}
-                onChange={(e) =>
-                  setProfile({ ...profile, name: e.target.value })
-                }
+                onChange={(e) => setProfile({ ...profile, name: e.target.value })}
                 className="text-2xl font-bold"
               />
             ) : (
@@ -102,25 +76,17 @@ export function ProfileDetails({
           )}
         </div>
 
+        {/* Profile stats */}
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
-          <div className="text-center">
-            <div className="text-2xl font-bold">{profile.stats.reviews}</div>
-            <div className="text-gray-600">Reviews</div>
-          </div>
-          <div className="text-center">
-            <div className="text-2xl font-bold">{profile.stats.followers}</div>
-            <div className="text-gray-600">Followers</div>
-          </div>
-          <div className="text-center">
-            <div className="text-2xl font-bold">{profile.stats.following}</div>
-            <div className="text-gray-600">Following</div>
-          </div>
-          <div className="text-center">
-            <div className="text-2xl font-bold">{profile.stats.booksRead}</div>
-            <div className="text-gray-600">Books Read</div>
-          </div>
+          {["reviews", "followers", "following", "booksRead"].map((statKey) => (
+            <div className="text-center" key={statKey}>
+              <div className="text-2xl font-bold">{profile.stats[statKey]}</div>
+              <div className="text-gray-600">{statKey.replace(/([A-Z])/g, " $1")}</div>
+            </div>
+          ))}
         </div>
 
+        {/* Profile bio and details */}
         <div className="space-y-4">
           {isEditing ? (
             <Textarea
@@ -133,51 +99,27 @@ export function ProfileDetails({
             <p className="text-gray-700">{profile.bio}</p>
           )}
 
+          {/* Location, website, email, and join date */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div>
-              <label className="text-sm text-gray-600">Location</label>
-              {isEditing ? (
-                <Input
-                  value={profile.location}
-                  onChange={(e) =>
-                    setProfile({ ...profile, location: e.target.value })
-                  }
-                />
-              ) : (
-                <p>{profile.location}</p>
-              )}
-            </div>
-            <div>
-              <label className="text-sm text-gray-600">Website</label>
-              {isEditing ? (
-                <Input
-                  value={profile.website}
-                  onChange={(e) =>
-                    setProfile({ ...profile, website: e.target.value })
-                  }
-                />
-              ) : (
-                <a
-                  href={profile.website}
-                  className="text-[#4527A0] hover:underline"
-                >
-                  {profile.website}
-                </a>
-              )}
-            </div>
-            <div>
-              <label className="text-sm text-gray-600">Email</label>
-              {isEditing ? (
-                <Input
-                  value={profile.email}
-                  onChange={(e) =>
-                    setProfile({ ...profile, email: e.target.value })
-                  }
-                />
-              ) : (
-                <p>{profile.email}</p>
-              )}
-            </div>
+            {["location", "website", "email"].map((fieldKey) => (
+              <div key={fieldKey}>
+                <label className="text-sm text-gray-600">
+                  {fieldKey.charAt(0).toUpperCase() + fieldKey.slice(1)}
+                </label>
+                {isEditing ? (
+                  <Input
+                    value={profile[fieldKey]}
+                    onChange={(e) => setProfile({ ...profile, [fieldKey]: e.target.value })}
+                  />
+                ) : fieldKey === "website" ? (
+                  <a href={profile[fieldKey]} className="text-[#4527A0] hover:underline">
+                    {profile[fieldKey]}
+                  </a>
+                ) : (
+                  <p>{profile[fieldKey]}</p>
+                )}
+              </div>
+            ))}
             <div>
               <label className="text-sm text-gray-600">Joined</label>
               <p>{profile.joinDate}</p>
