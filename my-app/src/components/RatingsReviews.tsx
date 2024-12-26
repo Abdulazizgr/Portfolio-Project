@@ -1,29 +1,29 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { Button } from "@/components/ui/button"
-import { Star, Book } from 'lucide-react'
-import Link from "next/link"
-import { Progress } from "@/components/ui/progress"
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
+import { Star, Book } from "lucide-react";
+import Link from "next/link";
+import { Progress } from "@/components/ui/progress";
 
 interface RatingsData {
-  totalRatings: number
-  totalReviews: number
-  averageRating: number
+  totalRatings: number;
+  totalReviews: number;
+  averageRating: number;
   distribution: {
     [key: number]: {
-      count: number
-      percentage: number
-    }
-  }
+      count: number;
+      percentage: number;
+    };
+  };
 }
 
 interface RatingsReviewsProps {
-  ratings: RatingsData
+  ratings: RatingsData;
 }
 
 export function RatingsReviews({ ratings }: RatingsReviewsProps) {
-  const [userRating, setUserRating] = useState<number | null>(null)
+  const [userRating, setUserRating] = useState<number | null>(null);
 
   const renderStars = (interactive: boolean = false) => {
     return (
@@ -32,7 +32,9 @@ export function RatingsReviews({ ratings }: RatingsReviewsProps) {
           <button
             key={star}
             onClick={() => interactive && setUserRating(star)}
-            className={`${interactive ? 'cursor-pointer hover:scale-110' : 'cursor-default'} transition-transform`}
+            className={`${
+              interactive ? "cursor-pointer hover:scale-110" : "cursor-default"
+            } transition-transform`}
           >
             <Star
               className={`w-5 h-5 ${
@@ -44,26 +46,28 @@ export function RatingsReviews({ ratings }: RatingsReviewsProps) {
           </button>
         ))}
       </div>
-    )
-  }
+    );
+  };
 
   return (
     <div className="space-y-8 py-8">
       <section>
         <h2 className="text-2xl font-bold mb-6">Ratings & Reviews</h2>
-        
+
         <div className="bg-white rounded-lg p-8 text-center space-y-4">
           <div className="mx-auto w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center">
             <Book className="w-8 h-8 text-gray-400" />
           </div>
-          <h3 className="text-xl font-bold">What do <span className="italic">you</span> think?</h3>
-          <div className="flex justify-center">
-            {renderStars(true)}
-          </div>
+          <h3 className="text-xl font-bold">
+            What do <span className="italic">you</span> think?
+          </h3>
+          <div className="flex justify-center">{renderStars(true)}</div>
           <p className="text-sm text-gray-600">Rate this book</p>
-          <Button variant="default" className="bg-black hover:bg-black/90">
-            Write a Review
-          </Button>
+          <Link href="/reviewPage/1">
+            <Button variant="default" className="bg-black hover:bg-black/90">
+              Write a Review
+            </Button>
+          </Link>
         </div>
       </section>
 
@@ -81,7 +85,7 @@ export function RatingsReviews({ ratings }: RatingsReviewsProps) {
 
       <section>
         <h2 className="text-2xl font-bold mb-6">Community Reviews</h2>
-        
+
         <div className="flex items-center gap-4 mb-6">
           <div className="flex items-baseline gap-2">
             <span className="text-4xl font-bold">{ratings.averageRating}</span>
@@ -107,7 +111,10 @@ export function RatingsReviews({ ratings }: RatingsReviewsProps) {
         <div className="space-y-3">
           {[5, 4, 3, 2, 1].map((stars) => (
             <div key={stars} className="flex items-center gap-4">
-              <Link href="#" className="w-12 text-sm text-gray-600 hover:underline">
+              <Link
+                href="#"
+                className="w-12 text-sm text-gray-600 hover:underline"
+              >
                 {stars} stars
               </Link>
               <Progress
@@ -115,13 +122,13 @@ export function RatingsReviews({ ratings }: RatingsReviewsProps) {
                 className="h-2 flex-1"
               />
               <span className="w-20 text-sm text-gray-600">
-                {ratings.distribution[stars].count.toLocaleString()} ({ratings.distribution[stars].percentage}%)
+                {ratings.distribution[stars].count.toLocaleString()} (
+                {ratings.distribution[stars].percentage}%)
               </span>
             </div>
           ))}
         </div>
       </section>
     </div>
-  )
+  );
 }
-
