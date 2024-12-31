@@ -1,0 +1,5 @@
+nav = F4F1EA
+text = 1E1915
+heading = 4527A0
+button =  #3F9970
+hero = F9F8F4
