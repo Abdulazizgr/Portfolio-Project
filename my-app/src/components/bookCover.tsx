@@ -88,14 +88,10 @@ export function BookCover({
           >
             <DropdownMenuTrigger asChild>
               <Button className="w-full max-w-xs border-2 border-green-200 rounded-2xl bg-white text-black hover:bg-green-700/90">
-                Want to read
+                Want to buy
               </Button>
             </DropdownMenuTrigger>
-            <DropdownMenuContent>
-              <DropdownMenuItem>Want to read</DropdownMenuItem>
-              <DropdownMenuItem>Currently reading</DropdownMenuItem>
-              <DropdownMenuItem>Read</DropdownMenuItem>
-            </DropdownMenuContent>
+            <DropdownMenuContent></DropdownMenuContent>
           </DropdownMenu>
         </div>
 

@@ -64,32 +64,32 @@ export default function LoginForm() {
 
       <div className="max-w-6xl mx-auto relative">
         <div className="absolute left-0 bottom-0 w-72 hidden lg:block">
-          <Image
+          {/* <Image
             src="/placeholder.svg?height=300&width=288"
             alt="Stack of books illustration"
             width={288}
             height={300}
-          />
+          /> */}
         </div>
 
         <div className="absolute right-0 bottom-0 w-96 hidden lg:block">
-          <Image
+          {/* <Image
             src="/placeholder.svg?height=400&width=384"
             alt="Person reading illustration"
             width={384}
             height={400}
-          />
+          /> */}
         </div>
 
         <div className="max-w-md mx-auto">
           <div className="bg-[#F4F1EA] rounded-3xl p-8 relative overflow-hidden">
             <div className="absolute top-1/2 right-0 w-32">
-              <Image
+              {/* <Image
                 src="/placeholder.svg?height=150&width=128"
                 alt="Person jumping illustration"
                 width={128}
                 height={150}
-              />
+              /> */}
             </div>
 
             <h1 className="text-2xl font-bold text-center mb-2">
@@ -112,7 +112,7 @@ export default function LoginForm() {
                 </span>
               </div>
 
-              <div className="relative">
+              <div className="relative ">
                 <Input
                   type={showPassword ? "text" : "password"}
                   placeholder="Enter Your Password"
@@ -134,14 +134,16 @@ export default function LoginForm() {
               </div>
 
               {error && <p className="text-red-500 text-sm">{error}</p>}
-
-              <Button
-                type="submit"
-                className="w-full rounded-full bg-[#4b4b48] hover:text-white h-12 hover:bg-[#363634] transition-all"
-                disabled={isLoading}
-              >
-                {isLoading ? "Logging in..." : "Log In"}
-              </Button>
+              <div className="h-5"></div>
+              <Link href="/" className="pt-10">
+                <Button
+                  type="submit"
+                  className="w-full rounded-full bg-[#4b4b48] hover:text-white h-12 hover:bg-[#363634] transition-all"
+                  disabled={isLoading}
+                >
+                  {isLoading ? "Logging in..." : "Log In"}
+                </Button>
+              </Link>
             </form>
 
             <div className="mt-6 text-center">

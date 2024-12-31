@@ -14,7 +14,7 @@ export default function BookDetails() {
     title:
       "The Sum of Us: What Racism Costs Everyone and How We Can Prosper Together",
     author: "Heather McGhee",
-    coverImage: "/f.jpg?height=600&width=400",
+    coverImage: "/f1.jpg?height=600&width=400",
     rating: 4.63,
     totalRatings: 19319,
     totalReviews: 2802,
@@ -54,7 +54,7 @@ export default function BookDetails() {
       id: "1",
       title: "Poverty, by America",
       author: "Matthew Desmond",
-      coverImage: "/placeholder.svg?height=400&width=300",
+      coverImage: "/f2.jpg?height=400&width=300",
       rating: 4.27,
       ratingCount: "47.8k",
     },
@@ -63,7 +63,7 @@ export default function BookDetails() {
       title:
         "How the Word Is Passed: A Reckoning with the History of Slavery Across America",
       author: "Clint Smith",
-      coverImage: "/placeholder.svg?height=400&width=300",
+      coverImage: "/f1.jpg?height=400&width=300",
       rating: 4.71,
       ratingCount: "35.7k",
     },
@@ -71,7 +71,7 @@ export default function BookDetails() {
       id: "3",
       title: "Caste: The Origins of Our Discontents",
       author: "Isabel Wilkerson",
-      coverImage: "/placeholder.svg?height=400&width=300",
+      coverImage: "/m1.jpg?height=400&width=300",
       rating: 4.53,
       ratingCount: "148k",
     },
@@ -80,7 +80,7 @@ export default function BookDetails() {
       title:
         "The Color of Law: A Forgotten History of How Our Government Segregated America",
       author: "Richard Rothstein",
-      coverImage: "/placeholder.svg?height=400&width=300",
+      coverImage: "/m2.jpg?height=400&width=300",
       rating: 4.44,
       ratingCount: "41.7k",
     },
@@ -135,7 +135,7 @@ export default function BookDetails() {
       comments: 17,
     },
     {
-      id: "2",
+      id: "4",
       user: {
         name: "Justin Evans",
         image: "/placeholder.svg?height=64&width=64",
@@ -152,10 +152,10 @@ export default function BookDetails() {
       comments: 17,
     },
     {
-      id: "2",
+      id: "5",
       user: {
         name: "Justin Evans",
-        image: "/placeholder.svg?height=64&width=64",
+        image: "/z.jpg?height=64&width=64",
         reviewCount: 1629,
         followerCount: 977,
         isFollowing: true,
@@ -169,10 +169,10 @@ export default function BookDetails() {
       comments: 17,
     },
     {
-      id: "2",
+      id: "6",
       user: {
         name: "Justin Evans",
-        image: "/placeholder.svg?height=64&width=64",
+        image: "/m1.jpg?height=64&width=64",
         reviewCount: 1629,
         followerCount: 977,
         isFollowing: true,
@@ -186,10 +186,10 @@ export default function BookDetails() {
       comments: 17,
     },
     {
-      id: "2",
+      id: "7",
       user: {
         name: "ziuz",
-        image: "/placeholder.svg?height=64&width=64",
+        image: "/f2.jpg?height=64&width=64",
         reviewCount: 1629,
         followerCount: 977,
         isFollowing: true,
