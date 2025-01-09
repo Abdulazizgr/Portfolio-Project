@@ -78,12 +78,12 @@ export default function ProfilePage() {
       dateAdded: "March 1, 2024",
       shelf: "read" as const,
     },
-    // Add more books as needed...
+    
   ];
 
   const handleProfileSave = (updatedProfile: typeof profile) => {
     console.log("Saving profile:", updatedProfile);
-    // Here you would typically make an API call to save the profile
+   
   };
 
   return (

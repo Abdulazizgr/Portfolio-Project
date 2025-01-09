@@ -26,10 +26,9 @@ import {
 } from "@/components/ui/accordion";
 
 export default function Navbar() {
-  const [isLoggedIn, setIsLoggedIn] = useState(true); // This should be replaced with your actual auth logic
+  const [isLoggedIn, setIsLoggedIn] = useState(true); 
 
   const handleLogout = () => {
-    // Implement your logout logic here
     setIsLoggedIn(false);
   };
 

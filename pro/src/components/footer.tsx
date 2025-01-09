@@ -120,7 +120,7 @@ export default function Footer() {
             {/* <Button
               className="w-full rounded-full bg-[#5865F2] hover:bg-[#4752C4] text-white"
             //   onClick={() =>
-            //     window.open("https://discord.gg/your-invite-link", "_blank")
+            //     window.open("https://discord.gg/invite-link", "_blank")
             //   }
             >
              

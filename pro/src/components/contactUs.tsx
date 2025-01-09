@@ -50,7 +50,7 @@ export default function ContactUs() {
 
   function onSubmit(values: z.infer<typeof formSchema>) {
     setIsSubmitting(true);
-    // Simulate API call
+    
     setTimeout(() => {
       console.log(values);
       toast.success(

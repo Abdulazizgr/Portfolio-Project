@@ -29,13 +29,7 @@ export default function BookReviewCTA() {
             </p>
 
             <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
-              {/* <div>
-                <Input
-                  type="email"
-                  placeholder="Enter your email to get started"
-                  className="w-full px-4 py-3 rounded-full border-2 border-gray-200 focus:border-[#4527A0] focus:ring-[#4527A0]"
-                />
-              </div> */}
+           
               <Button
                 type="submit"
                 className="w-full md:w-auto bg-[#3F9970] hover:bg-[#229446] text-white rounded-full px-8 py-3"

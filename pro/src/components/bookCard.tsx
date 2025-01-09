@@ -97,12 +97,6 @@ export default function BookCard() {
         </div>
 
         <div className="flex flex-col items-center mt-12 gap-4">
-          {/* <div className="flex gap-2">
-            <button className="w-2 h-2 rounded-full bg-[#4527A0]" />
-            <button className="w-2 h-2 rounded-full bg-gray-200" />
-            <button className="w-2 h-2 rounded-full bg-gray-200" />
-            <button className="w-2 h-2 rounded-full bg-gray-200" />
-          </div> */}
           <Link href="/myBooks">
             <Button
               variant="outline"
