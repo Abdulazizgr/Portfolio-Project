@@ -31,7 +31,7 @@ export default function BookDetails() {
       "History",
       "Politics",
       "Social Justice",
-      "Audiobook",
+    
       "Anti Racist",
     ],
     pages: 415,
