@@ -29,6 +29,10 @@ export default function BookListing() {
     min: 2000,
     max: new Date().getFullYear(),
   });
+  const [searchResults, setSearchResults] = useState([]);
+  const [isSearching, setIsSearching] = useState(false);
+  const [selectedGenres, setSelectedGenres] = useState<string[]>([]);
+  const [selectedRatings, setSelectedRatings] = useState<number[]>([]);
 
   const books = [
     {
@@ -105,6 +109,21 @@ export default function BookListing() {
     },
   ];
 
+  const handleGenreChange = (genre: string) => {
+    setSelectedGenres((prevGenres) =>
+      prevGenres.includes(genre)
+        ? prevGenres.filter((g) => g !== genre)
+        : [...prevGenres, genre]
+    );
+  };
+  const handleRatingChange = (rating: number) => {
+    setSelectedRatings((prevRatings) =>
+      prevRatings.includes(rating)
+        ? prevRatings.filter((r) => r !== rating)
+        : [...prevRatings, rating]
+    );
+  };
+
   const renderStars = (rating: number) => {
     return (
       <div className="flex items-center gap-1">
@@ -122,11 +141,56 @@ export default function BookListing() {
       </div>
     );
   };
-
-  const handleSearch = (e: React.FormEvent) => {
+  const handleSearch = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Searching for:", searchQuery);
+
+    if (!searchQuery.trim()) return;
+
+    setIsSearching(true);
+    try {
+      const response = await fetch(
+        `https://www.googleapis.com/books/v1/volumes?q=${encodeURIComponent(
+          searchQuery
+        )}`
+      );
+      const data = await response.json();
+      const formattedResults = data.items.map((item: any) => ({
+        id: item.id,
+        title: item.volumeInfo.title || "Untitled",
+        author: item.volumeInfo.authors?.[0] || "Unknown",
+        rating: Math.floor(Math.random() * 2) + 3, // Mock rating as API might not have it
+        reviewCount: Math.floor(Math.random() * 100) + 10, // Mock review count
+        image: item.volumeInfo.imageLinks?.thumbnail || "/default-book.jpg",
+        genre: item.volumeInfo.categories?.join(", ") || "Unknown",
+      }));
+      setSearchResults(formattedResults);
+      console.log(data);
+    } catch (error) {
+      console.error("Error fetching books:", error);
+    } finally {
+      setIsSearching(false);
+    }
   };
+
+  const displayedBooks =
+    searchQuery.trim() && searchResults.length > 0 ? searchResults : books;
+
+  const filteredBooks = displayedBooks.filter((book) => {
+    const matchesGenres =
+      selectedGenres.length === 0 ||
+      selectedGenres.some((genre) =>
+        book.genre
+          .split(",")
+          .map((g) => g.trim())
+          .includes(genre)
+      );
+
+    const matchesRatings =
+      selectedRatings.length === 0 ||
+      selectedRatings.some((rating) => book.rating >= rating);
+
+    return matchesGenres && matchesRatings;
+  });
 
   return (
     <div className="container mx-auto px-4 py-8 bg-white">
@@ -163,7 +227,10 @@ export default function BookListing() {
               <div className="space-y-2">
                 {[5, 4, 3, 2, 1].map((rating) => (
                   <label key={rating} className="flex items-center gap-2">
-                    <Checkbox />
+                    <Checkbox
+                      checked={selectedRatings.includes(rating)}
+                      onCheckedChange={() => handleRatingChange(rating)}
+                    />
                     <div className="flex items-center">
                       {[...Array(rating)].map((_, i) => (
                         <Star
@@ -192,7 +259,10 @@ export default function BookListing() {
                       "Sci-Fi",
                     ].map((genre) => (
                       <label key={genre} className="flex items-center gap-2">
-                        <Checkbox />
+                        <Checkbox
+                          checked={selectedGenres.includes(genre)}
+                          onCheckedChange={() => handleGenreChange(genre)}
+                        />
                         <span className="text-sm">{genre}</span>
                       </label>
                     ))}
@@ -293,7 +363,7 @@ export default function BookListing() {
                 : "grid-cols-1 lg:grid-cols-2"
             }`}
           >
-            {books.map((book) => (
+            {filteredBooks.map((book) => (
               <Link
                 key={book.id}
                 href={`/bookdetails/${book.id}`}

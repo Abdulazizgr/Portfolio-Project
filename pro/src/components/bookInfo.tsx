@@ -1,6 +1,7 @@
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Star, Share2, Award } from "lucide-react";
+import Image from "next/image";
 
 interface BookInfoProps {
   book: {
@@ -99,12 +100,20 @@ export function BookInfo({ book }: BookInfoProps) {
 
         <div className="flex gap-8 pt-4">
           <div className="flex items-center gap-2">
-            <div className="flex -space-x-2">
+            <div className="flex -space-x-4">
               {[...Array(3)].map((_, i) => (
                 <div
                   key={i}
-                  className="w-8 h-8 rounded-full bg-gray-200 border-2 border-white"
-                />
+                  className="w-10 h-10 rounded-full  border-2 border-white"
+                >
+                  <Image
+                    src="/images.jpeg?height=64&width=64"
+                    alt="User"
+                    width={32} 
+                    height={32} 
+                    className="object-cover"
+                  />
+                </div>
               ))}
             </div>
             <span className="text-sm text-gray-600">
@@ -112,12 +121,20 @@ export function BookInfo({ book }: BookInfoProps) {
             </span>
           </div>
           <div className="flex items-center gap-2">
-            <div className="flex -space-x-2">
+            <div className="flex -space-x-4">
               {[...Array(3)].map((_, i) => (
                 <div
                   key={i}
-                  className="w-8 h-8 rounded-full bg-gray-200 border-2 border-white"
-                />
+                  className="w-10 h-10 rounded-full border-2 border-white overflow-hidden"
+                >
+                  <Image
+                    src="/images.jpeg?height=64&width=64"
+                    alt="User"
+                    width={32} 
+                    height={32} 
+                    className="object-cover"
+                  />
+                </div>
               ))}
             </div>
             <span className="text-sm text-gray-600">

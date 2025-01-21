@@ -31,7 +31,7 @@ export default function BookDetails() {
       "History",
       "Politics",
       "Social Justice",
-    
+
       "Anti Racist",
     ],
     pages: 415,
@@ -46,7 +46,7 @@ export default function BookDetails() {
     bookCount: 4,
     followerCount: 480,
     bio: "Heather Charisse McGhee is an American political commentator and strategist. She is a former president and currently a distinguished senior fellow of Demos, a non-profit progressive U.S. think tank. McGhee is a regular contributor to NBC News and frequently appears as a guest and panelist on Meet the Press, All In with Chris Hayes, and Real Time with Bill Maher.",
-    profileImage: "/placeholder.svg?height=200&width=200",
+    profileImage: "/images.jpeg?height=200&width=200",
   };
 
   const recommendations = [
@@ -104,7 +104,7 @@ export default function BookDetails() {
       id: "1",
       user: {
         name: "Trevor",
-        image: "/placeholder.svg?height=64&width=64",
+        image: "/images.jpeg?height=64&width=64",
         reviewCount: 1413,
         followerCount: 23500,
         isFollowing: false,
@@ -121,7 +121,7 @@ export default function BookDetails() {
       id: "2",
       user: {
         name: "Justin Evans",
-        image: "/placeholder.svg?height=64&width=64",
+        image: "/images.jpeg?height=64&width=64",
         reviewCount: 1629,
         followerCount: 977,
         isFollowing: true,
@@ -138,7 +138,7 @@ export default function BookDetails() {
       id: "4",
       user: {
         name: "Justin Evans",
-        image: "/placeholder.svg?height=64&width=64",
+        image: "/images.jpeg?height=64&width=64",
         reviewCount: 1629,
         followerCount: 977,
         isFollowing: true,
@@ -155,7 +155,7 @@ export default function BookDetails() {
       id: "5",
       user: {
         name: "Justin Evans",
-        image: "/z.jpg?height=64&width=64",
+        image: "/images.jpeg?height=64&width=64",
         reviewCount: 1629,
         followerCount: 977,
         isFollowing: true,
@@ -172,7 +172,7 @@ export default function BookDetails() {
       id: "6",
       user: {
         name: "Justin Evans",
-        image: "/m1.jpg?height=64&width=64",
+        image: "/images.jpeg?height=64&width=64",
         reviewCount: 1629,
         followerCount: 977,
         isFollowing: true,
@@ -189,7 +189,7 @@ export default function BookDetails() {
       id: "7",
       user: {
         name: "ziuz",
-        image: "/f2.jpg?height=64&width=64",
+        image: "/images.jpeg?height=64&width=64",
         reviewCount: 1629,
         followerCount: 977,
         isFollowing: true,
@@ -202,7 +202,6 @@ export default function BookDetails() {
       likes: 225,
       comments: 17,
     },
-    // Add more reviews as needed...
   ];
 
   return (

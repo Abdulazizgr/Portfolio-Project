@@ -17,87 +17,25 @@ export default function LoginForm() {
   const [isLoading, setIsLoading] = useState(false);
   const router = useRouter();
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setError("");
-    setIsLoading(true);
-
-    console.log("Login attempt with:", { email, password });
-
-    try {
-      const response = await fetch(
-        `http://localhost:3001/users?email=${encodeURIComponent(email)}`
-      );
-
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
-      }
-
-      const users = await response.json();
-      console.log("Users found:", users);
-
-      if (users.length === 0) {
-        setError("No user found with this email");
-      } else if (users[0].password !== password) {
-        console.log("Incorrect password");
-        setError("Incorrect password");
-      } else {
-        console.log("Login successful");
-        // Here you would typically set some auth state or token
-        localStorage.setItem("user", JSON.stringify(users[0]));
-        router.push("/");
-      }
-    } catch (err) {
-      console.error("Error during login:", err);
-      setError("An error occurred. Please try again.");
-    }
-
-    setIsLoading(false);
-  };
-
   return (
     <div className="min-h-screen p-4 md:p-6 lg:p-8">
       <div className="flex items-center gap-2 mb-20 md:mb-20">
-        <Image src="/logo3.png" width={40} height={40} alt="Logo" />
-        <span className="text-xl font-bold pt-2 text-[#1E1915]">Logo Name</span>
+        <Image src="/logo.webp" width={40} height={40} alt="Logo" 
+        className="rounded-lg"/>
+        <span className="text-xl font-bold pt-2 text-[#1E1915]">
+          Book Review Hub
+        </span>
       </div>
 
       <div className="max-w-6xl mx-auto relative">
-        <div className="absolute left-0 bottom-0 w-72 hidden lg:block">
-          {/* <Image
-            src="/placeholder.svg?height=300&width=288"
-            alt="Stack of books illustration"
-            width={288}
-            height={300}
-          /> */}
-        </div>
-
-        <div className="absolute right-0 bottom-0 w-96 hidden lg:block">
-          {/* <Image
-            src="/placeholder.svg?height=400&width=384"
-            alt="Person reading illustration"
-            width={384}
-            height={400}
-          /> */}
-        </div>
-
         <div className="max-w-md mx-auto">
           <div className="bg-[#F4F1EA] rounded-3xl p-8 relative overflow-hidden">
-            <div className="absolute top-1/2 right-0 w-32">
-              {/* <Image
-                src="/placeholder.svg?height=150&width=128"
-                alt="Person jumping illustration"
-                width={128}
-                height={150}
-              /> */}
-            </div>
-
             <h1 className="text-2xl font-bold text-center mb-2">
               Welcome Back to Logo Name
             </h1>
             <p className="text-center mb-6 text-md">Log in to your account</p>
 
-            <form className="space-y-4" onSubmit={handleSubmit}>
+            <form className="space-y-4">
               <div className="relative">
                 <Input
                   type="email"

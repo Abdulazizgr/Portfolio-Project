@@ -10,6 +10,24 @@ export default function Hero() {
   const [activeSlide, setActiveSlide] = useState(0);
   const [searchQuery, setSearchQuery] = useState("");
 
+  const handleSearch = async (e: React.FormEvent) => {
+    e.preventDefault();
+
+    if (!searchQuery.trim()) return;
+
+    try {
+      const response = await fetch(
+        `https://www.googleapis.com/books/v1/volumes?q=${encodeURIComponent(
+          searchQuery
+        )}`
+      );
+      const data = await response.json();
+      console.log(data);
+    } catch (error) {
+      console.error("Error fetching books:", error);
+    }
+  };
+
   const slides = [
     {
       title: "Discover Your Next Favorite Book",
@@ -37,11 +55,6 @@ export default function Hero() {
         "Find books by title, author, genre, or rating in just a few clicks. Our powerful search tools make discovering your next read a breeze.",
     },
   ];
-
-  const handleSearch = (e: React.FormEvent) => {
-    e.preventDefault();
-    console.log("Searching for:", searchQuery);
-  };
 
   return (
     <div className="relative md:min-h-screen bg-[#F9F8F4] py-12 px-4 sm:px-6 lg:px-8">
@@ -93,7 +106,7 @@ export default function Hero() {
           </div>
 
           {/* Book Covers Grid */}
-          <div className="mt-12 lg:mt-0 relative h-[400px] sm:h-[500px] hidden md:block">
+          <div className="mt-12 lg:mt-0 relative h-[400px] sm:h-[500px]  hidden  md:block">
             {/* Book 1 */}
             <div className="absolute top-[10%] left-[10%] transform hover:scale-105 transition-transform shadow-2xl ">
               <Image
@@ -101,7 +114,7 @@ export default function Hero() {
                 alt="2020 World of War"
                 width={160}
                 height={224}
-                className="rounded-lg shadow-2xl hidden md:block"
+                className="rounded-lg shadow-2xl  "
               />
             </div>
 
@@ -148,23 +161,6 @@ export default function Hero() {
                 className="rounded-lg shadow-xl"
               />
             </div>
-          </div>
-
-          {/* Mobile Book Grid */}
-          <div className="grid grid-cols-2 gap-4 mt-8 sm:hidden">
-            {["/download.jpeg", "/h.jpg", "/i.jpg", "/g.jpg", "/d.webp"].map(
-              (src, index) => (
-                <div key={index} className="aspect-[3/4]">
-                  <Image
-                    src={src}
-                    alt={`Book ${index + 1}`}
-                    width={200}
-                    height={280}
-                    className="rounded-lg shadow-md w-full h-full object-cover"
-                  />
-                </div>
-              )
-            )}
           </div>
         </div>
       </div>

@@ -5,6 +5,9 @@ const nextConfig: NextConfig = {
   eslint: {
     ignoreDuringBuilds: true, // This will disable ESLint during builds
   },
+  images: {
+    domains: ["books.google.com"], // Add the domain here
+  },
 };
 
 export default nextConfig;

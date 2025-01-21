@@ -18,15 +18,9 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 import { ChevronDown, Menu, User, LogOut } from "lucide-react";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
 
 export default function Navbar() {
-  const [isLoggedIn, setIsLoggedIn] = useState(true); 
+  const [isLoggedIn, setIsLoggedIn] = useState(true);
 
   const handleLogout = () => {
     setIsLoggedIn(false);
@@ -39,9 +33,15 @@ export default function Navbar() {
           {/* Logo and Brand */}
           <Link href="/">
             <div className="flex items-center justify-center gap-2">
-              <Image src="/logo3.png" width={40} height={40} alt="Logo" />
+              <Image
+                src="/logo.webp"
+                width={40}
+                height={40}
+                alt="Logo"
+                className="rounded-lg"
+              />
               <span className="text-xl font-bold pt-2 text-[#1E1915]">
-                Logo Name
+                Book Review Hub
               </span>
             </div>
           </Link>
@@ -73,7 +73,6 @@ export default function Navbar() {
             >
               Community
             </Link>
-           
           </div>
 
           {/* Login Button or Profile and Mobile Menu */}
@@ -146,7 +145,7 @@ export default function Navbar() {
                     >
                       Community
                     </Link>
-                   
+
                     {isLoggedIn ? (
                       <>
                         <Link
